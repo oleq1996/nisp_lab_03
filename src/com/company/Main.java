@@ -15,6 +15,14 @@ class Main {
                 .min(Integer::compare)
                 .orElseThrow(EmptyDataException::new);
     }
+    private static int getMaxFromDigits(Integer[] digits) throws EmptyDataException {
+
+        return Arrays
+                .stream(digits == null ? new Integer[]{} : digits)
+                .max(Integer::compare)
+                .orElseThrow(EmptyDataException::new);
+    }
+
 
     public static void main(String[] args) {
 
@@ -23,7 +31,11 @@ class Main {
         try {
 
             Integer minFromDigits = Main.getMinFromDigits(listOfDigits);
+            Integer maxFromDigits = Main.getMaxFromDigits(listOfDigits);
+
             System.out.printf("MIN = %d \n", minFromDigits);
+            System.out.printf("MIN = %d \n", maxFromDigits);
+
         } catch(EmptyDataException e) {
 
             System.out.println(ERROR_EMPTY_DATA);
