@@ -3,7 +3,7 @@ package com.company;
 import java.util.Arrays;
 
 class EmptyDataException extends Exception {}
-
+// my comment
 class Main {
 
     private final static String ERROR_EMPTY_DATA = "Tablica nie moze byc pusta!";
